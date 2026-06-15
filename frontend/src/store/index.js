@@ -1,43 +1,25 @@
 import { createStore } from 'vuex'
 
-const store = createStore({
-  state() {
-    return {
-      user: null,
-      settings: {
-        theme: 'light',
-        language: 'en',
-      },
-    }
+export default createStore({
+  state: {
+    drugCandidates: [],
+    clinicalData: [],
   },
   mutations: {
-    setUser(state, user) {
-      state.user = user
+    setDrugCandidates(state, payload) {
+      state.drugCandidates = payload
     },
-    setTheme(state, theme) {
-      state.settings.theme = theme
-    },
-    setLanguage(state, language) {
-      state.settings.language = language
+    setClinicalData(state, payload) {
+      state.clinicalData = payload
     },
   },
   actions: {
-    login({ commit }, user) {
-      // placeholder for real auth
-      commit('setUser', user)
+    fetchDrugCandidates({ commit }) {
+      // placeholder for API call
+      commit('setDrugCandidates', [])
     },
-    logout({ commit }) {
-      commit('setUser', null)
-    },
-  },
-  getters: {
-    isAuthenticated(state) {
-      return !!state.user
-    },
-    currentTheme(state) {
-      return state.settings.theme
+    fetchClinicalData({ commit }) {
+      commit('setClinicalData', [])
     },
   },
 })
-
-export default store

@@ -1,14 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
-import DrugDevelopment from '../views/DrugDevelopment.vue'
-import Analytics from '../views/Analytics.vue'
-import Settings from '../views/Settings.vue'
+import DrugCandidates from '../views/DrugCandidates.vue'
+import ClinicalData from '../views/ClinicalData.vue'
 
 const routes = [
   { path: '/', name: 'Home', component: Home },
-  { path: '/drug-development', name: 'DrugDevelopment', component: DrugDevelopment },
-  { path: '/analytics', name: 'Analytics', component: Analytics },
-  { path: '/settings', name: 'Settings', component: Settings },
+  { path: '/drug-candidates', name: 'DrugCandidates', component: DrugCandidates },
+  { path: '/clinical-data', name: 'ClinicalData', component: ClinicalData },
 ]
 
 const router = createRouter({
